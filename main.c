@@ -1,40 +1,25 @@
 #include <stdio.h>
 
-// 関数プロトタイプの宣言
-void findMaxMin(int arr[], int n, int *max, int *min);
-
-int main()
+int myfunc(int x, int y)
 {
-    int i;
-    int arr[10] = {5, 3, 1, 6, 9, 8, 2, 6, 0, 7};
+    int z;
 
-    int max, min;
-
-    // 最大値と最小値を見つける関数を呼び出す
-    findMaxMin(arr, 10, &max, &min);
-
-    // 結果を出力
-    printf("最大値: %d\n", max);
-    printf("最小値: %d\n", min);
-
-    return 0;
+    z = 2 * x - y;
+    return z;
 }
 
-// 配列の最大値と最小値を見つける関数
-void findMaxMin(int arr[], int n, int *max, int *min)
+int main(void)
 {
-    *max = arr[0];
-    *min = arr[0];
+    int a[5] = {1, 2, 3, 4, 5};
+    int b, c;
 
-    for (int i = 1; i < n; i++)
-    {
-        if (arr[i] > *max)
-        {
-            *max = arr[i];
-        }
-        if (arr[i] < *min)
-        {
-            *min = arr[i];
-        }
-    }
+    c = a[1] + a[5];
+
+    b = c + a[1];
+
+    b = myfunc(b, c);
+
+    printf("b=%d\n", b);
+
+    return 0;
 }
